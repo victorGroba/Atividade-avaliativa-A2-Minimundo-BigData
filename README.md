@@ -1,40 +1,64 @@
-# 📊 Análise de Diabetes por Cidade  
-Trabalho de Banco de Dados – Minimundo 6
+# Análise de Casos de Diabetes por Cidade
 
-Este projeto realiza uma análise completa dos casos de diabetes por cidade, incluindo:  
-- Importação e exploração dos dados  
-- Cálculo da taxa de casos por 10 mil habitantes  
-- Classificação do risco por cidade  
-- Geração de tabelas analisadas no terminal  
-- Criação e salvamento de gráficos automaticamente  
+Este projeto realiza uma análise simples e direta sobre dados de diabetes em diferentes cidades.  
+O objetivo é calcular a taxa de casos por 10 mil habitantes, classificar o nível de risco e gerar gráficos ilustrativos.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📌 O que o script faz
 
-Trabalho BD/
-│
-├── projeto_diabetes.py        
-├── saude_doencas.csv          
-├── grafico_taxa_risco.png     
-├── grafico_casos_diabetes.png 
-├── requirements.txt           
-└── README.md                  
+O arquivo `projeto_diabetes.py` executa as seguintes etapas:
+
+### 1. Leitura dos dados  
+Lê o arquivo `saude_doencas.csv` e exibe:
+- Estrutura da tabela
+- Primeiras linhas
+- Estatísticas básicas dos dados numéricos
+
+### 2. Cálculo  
+Cria uma nova coluna chamada **taxa_10k**, usando a fórmula:
+
+```
+(casos_diabetes / populacao) * 10000
+```
+
+### 3. Classificação do risco  
+Cada cidade recebe uma classificação de risco baseada na taxa:
+
+| Taxa por 10 mil hab. | Risco |
+|----------------------|--------|
+| < 40                 | Baixo  |
+| 40 a 70              | Médio  |
+| > 70                 | Alto   |
+
+### 4. Tabela Final  
+O script exibe uma tabela organizada mostrando:
+- Cidade  
+- Casos  
+- População  
+- Taxa por 10 mil habitantes  
+- Classificação do risco  
+
+### 5. Geração de Gráficos  
+Dois gráficos são criados e salvos automaticamente no projeto:
+
+1. **grafico_taxa_risco.png**  
+   - Exibe a taxa por 10 mil habitantes  
+   - Colorido por nível de risco  
+
+2. **grafico_casos_diabetes.png**  
+   - Mostra a quantidade total de casos por cidade  
 
 ---
 
-## 📦 Requisitos
-
-Antes de rodar o projeto, instale as dependências:
+## 📁 Arquivos do Projeto
 
 ```
-pip install -r requirements.txt
-```
-
-Ou manualmente:
-
-```
-pip install pandas matplotlib seaborn
+projeto_diabetes.py        # Script principal
+saude_doencas.csv          # Base de dados analisada
+grafico_taxa_risco.png     # Gráfico gerado automaticamente
+grafico_casos_diabetes.png # Segundo gráfico gerado
+README.md                  # Documentação do projeto
 ```
 
 ---
@@ -42,78 +66,27 @@ pip install pandas matplotlib seaborn
 ## ▶️ Como Executar
 
 1. Certifique-se de que todos os arquivos estejam na mesma pasta.  
-2. Abra o terminal dentro da pasta do projeto:
+2. Instale as dependências obrigatórias:
 
 ```
-PS C:\Users\SeuUsuario\Desktop\Trabalho BD>
+pip install pandas matplotlib seaborn
 ```
 
-3. Execute:
+3. Execute o script:
 
 ```
 python projeto_diabetes.py
 ```
 
----
-
-## 📊 Funcionalidades
-
-### ✔ 1. Importação e exploração dos dados  
-- Info geral  
-- Primeiras linhas  
-- Estatísticas  
-
-### ✔ 2. Cálculo  
-Taxa por 10 mil habitantes:
-
-```
-(casos_diabetes / populacao) * 10000
-```
-
-### ✔ 3. Classificação do risco  
-| Taxa | Risco |
-|------|--------|
-| < 40 | Baixo |
-| 40–70 | Médio |
-| > 70 | Alto |
-
-### ✔ 4. Tabela no terminal  
-Com: cidade, população, casos, taxa, risco colorido.
-
-### ✔ 5. Gráficos gerados automaticamente
-Salvos como:
-
-- `grafico_taxa_risco.png`
-- `grafico_casos_diabetes.png`
+Os gráficos serão gerados automaticamente na pasta do projeto.
 
 ---
 
-## 👥 Integrantes & Tarefas
+## ✔️ Conclusão
 
-| Integrante | Tarefa | Ferramenta |
-|-----------|--------|------------|
-| 1. Dados Brutos | Importar e explorar o CSV | Pandas |
-| 2. Cálculo | Taxa por 10 mil hab. | Pandas |
-| 3. Classificação | Criar coluna de risco | Pandas |
-| 4. Visualização | Gráficos | Seaborn / Matplotlib |
-| 5. Apresentação | Tabela final e slides | Pandas + Canva/PowerPoint |
+Este projeto permite visualizar rapidamente:
+- A taxa de diabetes por cidade  
+- A classificação de risco  
+- Comparação visual com gráficos  
 
----
-
-## ✔ Observações
-
-- O CSV deve estar na mesma pasta do script.  
-- O script salva os gráficos automaticamente.  
-- Compatível com qualquer PC (inclusive do professor).  
-
----
-
-## 🏁 Conclusão
-
-O projeto entrega:
-- Análise completa  
-- Tabela bem formatada  
-- Dois gráficos  
-- Visual profissional no terminal  
-- Código simples e claro  
-
+É uma solução simples, clara e fácil de apresentar, cobrindo análise básica e visualização de dados.
