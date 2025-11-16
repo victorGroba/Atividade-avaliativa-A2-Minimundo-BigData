@@ -1,5 +1,13 @@
 # Análise de Casos de Diabetes por Cidade
 
+Projeto desenvolvido pelos integrantes:  
+
+- **Ana Carolina**  
+- **Jefferson**  
+- **José Victor**  
+- **Lucas Daniel**  
+- **Marcelo Gomes**
+
 Este projeto realiza uma análise simples e direta sobre dados de diabetes em diferentes cidades.  
 O objetivo é calcular a taxa de casos por 10 mil habitantes, classificar o nível de risco e gerar gráficos ilustrativos.
 
@@ -11,9 +19,9 @@ O arquivo `projeto_diabetes.py` executa as seguintes etapas:
 
 ### 1. Leitura dos dados  
 Lê o arquivo `saude_doencas.csv` e exibe:
-- Estrutura da tabela
-- Primeiras linhas
-- Estatísticas básicas dos dados numéricos
+- Estrutura da tabela  
+- Primeiras linhas  
+- Estatísticas básicas dos dados numéricos  
 
 ### 2. Cálculo  
 Cria uma nova coluna chamada **taxa_10k**, usando a fórmula:
